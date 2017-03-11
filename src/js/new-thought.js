@@ -26,6 +26,7 @@
         .then(function handleResponse(res) {
             if (res.status > 299) {
                 console.error('Looks like a bad status code:', res.status);
+                return Promise.reject('Sorry, but there was a problem with your request.');
             } else {
                 return res.json()
             }
