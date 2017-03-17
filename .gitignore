@@ -2,3 +2,8 @@ node_modules/
 .sass-cache/
 build/
 .DS_Store
+notes
+/src/test/specs/classpecs.js
+
+daytimecodealongspec.js
+maindaytimecodealong.js

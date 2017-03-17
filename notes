@@ -1,0 +1,216 @@
+
+Learning Objectives
+
+Front end testing requires us to also account for DOM manipulation and Ajax calls.
+This assignment will give us some practice writing asynchronous tests and ones
+that require a specific piece of HTML to execute. By the end of this assignment
+you should understand the basics of setting up an HTML fixture for a test and
+using a fake server for Ajax testing.
+
+Your Mission
+
+You have been given a project with some existing code. Fork and then clone the
+ project to get started. You will need to set up the testing infrastructure,
+ then start writing tests for the two functions:
+
+Read the function doc blocks to get a sense for what is going on
+Write a couple sanity check tests
+Use fixtures to test the showRecent function
+Where should you create the fixture?
+Use a fake server to test the getRecent function
+Should these tests be in the same describe block as the other function's tests?
+Where should the fake server setup go?
+You should have at least one test for each function in the source file, and you
+must use a fixture and a fake server.
+
+
+
+clone repo
+node modules
+add package.json
+add dependencies - mocha, chai, karma
+setup .conf.js file
+setup spec.js
+update readme
+
+
+
+
+
+
+
+
+
+class NOTES///
+
+TESTING
+    UNIT-Jordan believes is most important: testing the smallest unit possible
+    E2E-end to end, user machine to bottom layer of the server
+    SMOKE- the idea that things generally do what you expect at a high level
+    INTEGRATION- just testing the integration between a modules
+    USER ACCEPTANCE- from the end user POV, is something acceptable or usable
+
+
+
+When unit testing, a function is the smallest unit.
+    What is most important is that function does what it is supposed to do.
+
+
+  TEST- ensures the function does what it is supposed to.
+      -ASSERTIONS/expectations.
+        Inside the test, we will assert what the outcome should be
+        -every test should have assertions
+
+
+
+
+
+ASSERTIONS for a test for a function  that will sum two numbers:
+  is the result a num?
+  is there a sum?
+  -test for two strings
+    -what if the function receives two numbers a strings
+  -what if the fn gets no arguments?
+  -what if the test only gets 1 arg?
+
+  TESTS collected to test a function might be called a describe block
+
+  a collection of describe block tests might be called a Suite of Tests
+
+  TOOL USED FOR TESTING
+  -mocha: a TESTING library-allows for the individual tests-describe block
+  -chai: intended to be used with mocha. will provide ASSERTIONS
+  -karma: a TEST RUNNER.  Will provide structure for running the tests
+
+  package.json will track the dependencies. will use NPM install
+
+  npm init - gives us the package.json
+    -name the init
+    -name the entry point (the focal point of the program...usually the main.js)
+
+
+  to install a dependency and track it, we need to "save" it with --save-dev
+      -this saves it in the developer library
+
+  to integrate karma into mocha, chai, and chrome
+
+  karma-mocha
+  karma-chai
+  karma-chrome-launcher
+
+
+
+  for creating a test file, name it the source name .spec.js
+          ie (scriptname.spec.js)-this will be in your
+            specs subfolder
+
+
+BDD- behavior driven development
+TDD - test driven development
+      - these are the same thing
+
+when testing, karma with run the code and create the html...but need to config
+    karma 1st
+
+    create a name.conf.js file-
+    type modules.exports= function FNNAME (config)
+    then we need to config.set({});
+        with frameworks:['mocha', 'chai']
+
+
+GLOBBING PATTERN -  will use an * to look at ALL files
+
+src/* looks for any file in the source
+src/**/*.js looks for any file beyond the source file
+
+
+to run KARMA - we need to type "./node_modules/karma/bin/karma start filename.conf.js"
+    this says run it
+
+
+    Go to chaijs.com for more assertions
+        -we want bdd
+
+Tests don't really need docblocks
+
+
+package.json can be config to run the tests driectly
+  by changing the scripts
+
+  "scripts": {
+    "test": "karma start math.conf.js"
+
+    then "npm test"
+
+
+
+we need to fork and clone the project
+    update the readme
+
+
+1st test ex) expect(1).to.be.equal(1);
+
+
+
+
+
+Write tests for the two functions in the window.calc namespace...
+The description of the functions are in the source code, read them!
+Ensure that you are testing not just the success conditions,
+but also the failures! For example, ensure that a function acts as
+expected both with good arguments and bad arguments!
+
+
+
+
+HOMEWORK REVIEW NOTES
+03/16/17
+
+
+let result = chai.expect //basically just a shortening of chai expect
+
+
+// describe just contains the group of assertions
+
+
+describe('math tests', function() { //describe block
+
+    describe('sum function', function() { //describe block
+
+
+  //'it' is the test
+    it('should return a number when an argument is passed', function() {
+        let result = window.calc.sum([1, 1, 1]); //sets 'result' to the
+        //to the result of the sum function that has been passed an array
+        expect(result).to.be.a('number');//assertion that says what argument type is
+        expect(result).to.equal(3);//assertion
+    });
+
+
+will need to do console.info inside of karma
+
+
+
+
+HOMEWORK REVIEW NOTES
+
+***********************
+fetch !== XHR
+
+descriptions should be very descriptive for the it('should')
+
+It will help to make a flow chart of the code so that you know
+what tests to run.
+
+
+GET DATA FUNCTION
+
+--
+err -- mocha uses this to pass an actual error message
+
+'fetch-mock' is  a tool to emulate a fetch server.
+npm install --save-dev fetch-mock
+get the notes from class
+
+
+tot return a promise that rejects, return Promise.reject('message';)
