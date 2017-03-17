@@ -10,7 +10,7 @@
      * @return {void}
      */
 
-                                    //changed from thoughts = []
+
     window.thoughter.showRecent = function showRecent(thoughts = []) {
         if (!Array.isArray(thoughts)) {
             return;
@@ -20,7 +20,7 @@
 
         //added let because it wasnt on the "recent" declaration
 
-      let recent = document.querySelector('.recent');//creates a 'recent' class
+      let recent = document.querySelector('.recent');//selects a 'recent' class
         thoughts.forEach(function showThought(thought) {//iterated through the array
             if (!thought.content || !thought.createTime || !thought.id) {
                 return;
@@ -28,9 +28,9 @@
 
             let thoughtUI = document.createElement('article'); //creates an article with thoughtUI
             thoughtUI.classList.add('panel');//adds panel to the thoughtUi article
-            thoughtUI.classList.add('panel-info');//adds panel.info to the thoughtUi article
-            thoughtUI.setAttribute('id', 'thought-' + thought.id);//sets the attributes of thoughtUI
-            thoughtUI.innerHTML = `<header class='panel-heading'>Posted ${thoughts.createTime}</header>
+            thoughtUI.classList.add('panel-info');//adds panel.info to the  article
+            thoughtUI.setAttribute('id', 'thought-' + thought.id);//sets the attributes of article
+            thoughtUI.innerHTML = `<header class='panel-heading'>Posted ${thought.createTime}</header>
                 <main class='panel-body'>
                     <p>${thought.content}</p>
                 </main>`;
