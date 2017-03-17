@@ -4,7 +4,7 @@
   "description": "Handling Ajax and DOM tests",
   "main": "index.js",
   "scripts": {
-    "test": "karma start thoughter.cong.js"
+    "test": "karma start thoughter.conf.js"
   },
   "repository": {
     "type": "git",

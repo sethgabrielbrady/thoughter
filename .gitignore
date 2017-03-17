@@ -3,3 +3,7 @@ node_modules/
 build/
 .DS_Store
 notes
+/src/test/specs/classpecs.js
+
+daytimecodealongspec.js
+maindaytimecodealong.js
