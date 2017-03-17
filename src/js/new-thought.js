@@ -1,5 +1,5 @@
 (function() {
-
+  'use strict';
     window.thoughter = window.thoughter || {};
 
     /**
@@ -28,7 +28,7 @@
                 console.error('Looks like a bad status code:', res.status);
                 return Promise.reject('Sorry, but there was a problem with your request.');
             } else {
-                return res.json()
+                return res.json();
             }
         });
     };

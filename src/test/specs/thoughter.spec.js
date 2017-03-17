@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    let expect = chai.expect;
+    let expect = window.chai.expect;
 
 
     //some objects to pass it within
