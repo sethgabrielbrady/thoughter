@@ -31,12 +31,14 @@
             });
             //aferEach
             afterEach(function() {
-                let mainTag = document.querySelector('main');
+                let mainTag = document.querySelector('main.recent');
                 mainTag.parentNode.removeChild(mainTag);
             });
 
+
+
             //checks for a function--- sanity check
-            it('should be a function', function() {
+            it('should test that there is a function', function() {
                 expect(window.thoughter.showRecent).to.be.a('function');
             });
 
@@ -53,9 +55,11 @@
             it('should expect a length of 0 if nothing is passed', function(){
                 window.thoughter.showRecent(); //
                 let article = document.querySelectorAll('main article');
-                console.info('Expect  0 = ' + article);
+                // console.info('Expect  0 = ' + article);
                 expect(article.length).to.equal(0);
             });
+
+            //I should add the check for 1 article be created
 
             it('should create a new article for every thought', function(){
                 window.thoughter.showRecent([firstObj, secObj]);

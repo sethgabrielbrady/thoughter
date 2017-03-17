@@ -188,3 +188,29 @@ describe('math tests', function() { //describe block
 
 
 will need to do console.info inside of karma
+
+
+
+
+HOMEWORK REVIEW NOTES
+
+***********************
+fetch !== XHR
+
+descriptions should be very descriptive for the it('should')
+
+It will help to make a flow chart of the code so that you know
+what tests to run.
+
+
+GET DATA FUNCTION
+
+--
+err -- mocha uses this to pass an actual error message
+
+'fetch-mock' is  a tool to emulate a fetch server.
+npm install --save-dev fetch-mock
+get the notes from class
+
+
+tot return a promise that rejects, return Promise.reject('message';)
