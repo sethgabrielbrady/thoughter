@@ -11,7 +11,7 @@ Let's get some practice setting up ```process automation``` using ```Grunt``` fo
 
 Start with your fork of the ```Thoughter``` project. There is a branch in there called ```phase-two```. This branch includes some additional work that your developers have done. We need to take this new code and write some ```process automation``` using ```Grunt``` to wrangle all of these different tasks.
 
-TOFO LIST -
+TODO 
 1. add ```grunt``` to our previous homework
 2. change into the ```phase two``` branch
 3. after grunt is installed: ```install dependencies```.

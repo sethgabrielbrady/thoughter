@@ -77,8 +77,8 @@ module.exports = function configuration(gruntConfig) {
 //watch
         watch: {
           scripts: {
-            files: ['*.js', '*.html', 'src/sass/*.scss'],
-            tasks: ['jshint'],
+            files: ['**/*.js', '**/*.html', 'src/sass/*.scss'],
+            tasks: ['jshint','karma', 'clean', 'copy', 'sass'],
             options: {
             spawn: false,
           }
@@ -88,11 +88,10 @@ module.exports = function configuration(gruntConfig) {
 
   });
 
-  // grunt.loadNpmTasks('grunt-contrib-watch');
 
 //one task to rule them all
     require('load-grunt-tasks')(gruntConfig);
 
 //gruntConfig
-    gruntConfig.registerTask('build', ['jshint','karma', 'clean', 'copy', 'sass']);
+    gruntConfig.registerTask('build', ['jshint','karma', 'clean', 'copy', 'sass', 'watch']);
 };
