@@ -20,8 +20,8 @@ module.exports = function configuration(gruntConfig) {
             files:[
               {
               cwd:'src/js',
-              src:['*.js'],
-              dest:'build/',
+              src:['**/*.js'],
+              dest:'build/js/',
               expand:true
               }
             ]
@@ -31,7 +31,7 @@ module.exports = function configuration(gruntConfig) {
               {
               cwd:'node_modules/jquery/dist',
               src:['jquery.js'],
-              dest:'build/js/vendor',
+              dest:'build/js/vendor/',
               expand:true
               }
             ]
@@ -46,6 +46,7 @@ module.exports = function configuration(gruntConfig) {
             }
           }
         },
+
 //jshint
         jshint:{
           source:{
@@ -57,6 +58,7 @@ module.exports = function configuration(gruntConfig) {
               }
             }
           },
+
 //karma
         karma:{
           testUNITS:{
@@ -71,9 +73,22 @@ module.exports = function configuration(gruntConfig) {
                 ]
             }
           }
+        },
+//watch
+        watch: {
+          scripts: {
+            files: ['*.js', '*.html', 'src/sass/*.scss'],
+            tasks: ['jshint'],
+            options: {
+            spawn: false,
+          }
         }
+      }
 
-    });
+
+  });
+
+  // grunt.loadNpmTasks('grunt-contrib-watch');
 
 //one task to rule them all
     require('load-grunt-tasks')(gruntConfig);
