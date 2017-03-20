@@ -6,7 +6,7 @@ module.exports = function karmaConfig( config ){
     singleRun: true,
     files: [
       'src/**/*.js',
-      'node_modules/sinon/pkg/sinon-2.0.0.js',//pulls in sinon
+      'node_modules/fectch-mock/es5/client-browserified.js',
       'test/specs/**/*.js'
     ]
   });

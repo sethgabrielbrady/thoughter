@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    let expect = chai.expect;
+    let expect = window.chai.expect;
 
 
     //some objects to pass it within
@@ -65,7 +65,7 @@
                 window.thoughter.showRecent([firstObj, secObj]);
                 let recent = document.querySelector('.recent');
                 expect(recent.childNodes.length).to.equal(2);
-                console.info(document.querySelector('.recent'));
+                // console.info(document.querySelector('.recent'));
             });
 
             it('should create a main with a class of recent', function(){
@@ -77,14 +77,14 @@
             it('should create an article with a class of panel', function(){
                 window.thoughter.showRecent([firstObj]);
                 let articleClass = document.querySelector('article').classList;
-                console.info(articleClass);
+                // console.info(articleClass);
                 expect(articleClass.contains('panel'));
             });
 
             it('should create an article with a class of panel-info', function(){
                 window.thoughter.showRecent([firstObj]);
                 let articleClass = document.querySelector('article').classList;
-                console.info(articleClass);
+                // console.info(articleClass);
                 expect(articleClass.contains('panel-info'));
             });
 
@@ -109,7 +109,7 @@
             it('should check date posted', function() {
                 window.thoughter.showRecent([firstObj]);
                 let header = document.querySelector('header');
-                console.info(timeObj);
+                // console.info(timeObj);
                 expect(header.innertext).to.equal(timeObj.value);
             });
 

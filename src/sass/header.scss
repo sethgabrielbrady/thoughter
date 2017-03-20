@@ -1,0 +1,10 @@
+
+header {
+    border-bottom: $themeBorder;
+
+    h1 {
+        font-size: $topHeaderFontSize;
+        font-weight: bold;
+        margin-left: $topHeaderShift;
+    }
+}

@@ -1,0 +1,10 @@
+
+.recent {
+    width: $recentContainerWidth;
+    margin: 0 auto;
+    display: flex;
+
+    article {
+        flex: 0 0 calc((100% / $thoughtColumns) - $thoughtMargin);
+    }
+}

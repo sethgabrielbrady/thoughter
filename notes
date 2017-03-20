@@ -214,3 +214,139 @@ get the notes from class
 
 
 tot return a promise that rejects, return Promise.reject('message';)
+
+03/17/notes
+HINGS WE MIGHT USE FOR A NEW FRONT END PROJECT
+  HTML, CSS, SASS, BOOTSTRAP,JSHINT, JQUERY, TESTS, ETC
+
+  When using many dev tools, we might need something called called a "build process"
+      --something that will build what the final application will be.
+
+      -the build-process will take these and make them more manageable
+      --and turns all your dev tools and what not into a  'build'
+
+    the build is made in another DIR
+
+    --things that need to hapenn
+        1) SASS to CSS
+        2) run our tests//if the tests fail, no reason to produce a build DIR
+        3) import our html and JS to the build DIR
+        4) compress our JS
+        5) copy our dependencies
+        6) need to run JSHint // if there issues, it should make the build
+        7) transpile es6-es5
+        8) copy media
+
+    we need a need new tool to do this
+
+    Grunt- A JS task runner
+
+    -compressing makes it quicker to access code.
+
+npm install --save-dev grunt
+
+-we need to make a grunt config file
+    it will need
+
+    module.exports = function configuration(gruntConfig) {
+        gruntConfig.initConfig({
+
+
+
+        });
+    };
+
+REM- grunt is just the task runner
+npm install grunt-contrib-copy --save-dev
+
+To config grunt, we will need to install packages fro the grunt site
+
+and we have to add the required line, speccd in the pakage descirpt
+-it goes outside the init config block
+
+or we can install load-grunt-tasks (npm)
+
+dont forget to make  a 'build' dir
+
+
+to run grunt from the cmd license
+install this to be a bale to run grunt with just "grunt"
+  - npm install -g grunt-cli
+
+//our first task tends not be the copy task
+
+//this will clean out the build dir
+npm install --save-dev grunt-contrib-clean
+
+now we can run
+'grunt clean'
+
+
+NOW things are getting ridiculous- we need to make
+    aliases to run theses things
+
+      gruntConfig.registerTask('build', ['clean', 'copy']);
+        'this lets us make an alias('build') and specify what tasks
+        to do in order['clean', 'copy']
+
+        we can multiple alias
+
+    we run this with 'grunt build'
+
+  !!!  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  !!!do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+  do not change code in the build dir EVEVEVEVEVEVVEVEVEVEVEVVEVEVR
+
+
+
+
+NOW THAT WE INSTALLED THE SAS PLUGIN WE NEED TO GO BACK TO OUR
+  gruntConfig
+
+  get the config as per the gruntfile.js, then add it to our
+      grunt config
+
+
+
+'npm install --save-dev grunt-contrib.jshint'
+//install jshint stuff
+//make sure you have a jshint file
+tell the target what jshint file to use jshint: ->source->options:->jshintrc
+files:{[src:['src/**/*.js']]} //look for any js files inside the source
+
+
+
+What about KARMA????????????//
+
+npm install grunt-karma --save-dev
+
+config the karma task and add it to your alias
+
+DOES IT MAKE SENSE TO CMMIT THE BUILD DIR TO GIT
+    -SOMETIMES YES, SOMETIMES NO
+
+
+Weekend project-
+  add grunt to our previous homework
+  change into the phase two branch
+  merge from master to phase two
+    phase two will have some extra files
+      add grunt
+        install dependencies
+        ignore concat js into a single js
+    WE NEED to produce a build. Tests and config should not
+    be in the build- just html, css, html
+
+    run http-server from the build
+
+
+    Your next step is to set up Grunt:
+
+
+Ensure you can run Grunt from the command line
