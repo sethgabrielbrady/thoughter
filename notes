@@ -350,3 +350,16 @@ Weekend project-
 
 
 Ensure you can run Grunt from the command line
+
+
+
+when you are ready to submit, you will need to MERGE your changes in the
+`phase-two` branch back into `master` before submitting.
+
+
+
+write testting for new thought - js
+
+'fetch-mock' is  a tool to emulate a fetch server.
+npm install --save-dev fetch-mock
+get the notes from class

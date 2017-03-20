@@ -4,6 +4,7 @@ build/
 .DS_Store
 notes
 /src/test/specs/classpecs.js
+thoughter.conf.js
 
 daytimecodealongspec.js
 maindaytimecodealong.js
