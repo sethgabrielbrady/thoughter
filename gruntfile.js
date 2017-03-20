@@ -70,10 +70,19 @@ module.exports = function configuration(gruntConfig) {
                   'src/**/*.js',
                   'node_modules/fetch-mock/es5/client-browserified.js',
                   'test/specs/**/*.js'
-                ]
+                  ]
+                // preprocessors:{
+                //   'src/**/*.js': ['coverage'], //what files we are testing
+                // },
+                // reporters:['dots', 'coverage'],
+                // coverageReporter:{
+                // type:'text-summary'
+                // }
+              }
             }
-          }
-        },
+
+          },
+
 //watch
         watch: {
           scripts: {
