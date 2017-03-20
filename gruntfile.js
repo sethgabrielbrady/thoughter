@@ -19,8 +19,8 @@ module.exports = function configuration(gruntConfig) {
           allJavaScript:{
             files:[
               {
-              cwd:'src/js',
-              src:['**/*.js'],
+              cwd:'src/js', //if sll your files are already in a subfolder, grunt i will copy it
+              src:['**/*.js'],//** means any sub directory
               dest:'build/js/',
               expand:true
               }
@@ -88,9 +88,10 @@ module.exports = function configuration(gruntConfig) {
           scripts: {
             files: ['**/*.js', '**/*.html', 'src/sass/*.scss'],
             tasks: ['jshint','karma', 'clean', 'copy', 'sass'],
-            options: {
-            spawn: false,
-          }
+            // options: {
+            // spawn: false,
+            // event:['all']//what is this
+          // }
         }
       }
 
@@ -100,7 +101,8 @@ module.exports = function configuration(gruntConfig) {
 
 //one task to rule them all
     require('load-grunt-tasks')(gruntConfig);
+    //run watch by itself.
 
 //gruntConfig
-    gruntConfig.registerTask('build', ['jshint','karma', 'clean', 'copy', 'sass', 'watch']);
+    gruntConfig.registerTask('build', ['jshint','karma', 'clean', 'copy', 'sass']);
 };
