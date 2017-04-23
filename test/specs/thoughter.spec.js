@@ -35,11 +35,6 @@
           expect(window.thoughter.showRecent).to.be.a('function');
       });
 
-      it('should not be an array that is passed as an argument', function() {
-          expect(window.thoughter.showRecent('blue')).to.be.an('undefined');
-          // console.info(window.thoughter.showRecent);
-      });
-
       it('should be undefined if an array containing something other than an object is passed',
           function() {
               expect(window.thoughter.showRecent(['green'])).to.be.an('undefined');
@@ -56,12 +51,6 @@
           window.thoughter.showRecent([firstObj, secObj]);
           let recent = document.querySelector('.recent');
           expect(recent.childNodes.length).to.equal(2);
-      });
-
-      it('should create a main with a class of recent', function(){
-          window.thoughter.showRecent([firstObj]);
-          let mainClass = document.querySelector('main').classList;
-          expect(mainClass.contains('recent'));
       });
 
       it('should create an article with a class of panel', function(){
